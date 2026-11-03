@@ -95,6 +95,7 @@ Read those lists before your first switch and add anything you want to keep.
   - `.claude/settings.json` - Claude Code settings, including the Herdr state hook
   - `.pi/agent/` - Pi themes, extensions, and settings
   - `AGENTS.md` - shared agent instructions
+  - `.agents/skills/herdr/` - the Herdr skill for every agent
 
 ## Terminals
 
@@ -120,6 +121,7 @@ herdr plugin install kryptamine/herdr-auto-title --ref v0.19.0
 herdr plugin action invoke herdr.auto-title.restart
 ```
 
+- The Herdr skill (`home/.agents/skills/herdr/SKILL.md`, linked for Claude, Codex, Pi, and Kimi) lets one agent split a pane, start another agent there, send it work, and read the result. It only activates when you mention Herdr, for example: "Use Herdr to start a codex agent named coder in a split next to you, give it docs/plan.md, and review its diff when it's done." It's printed by `herdr --skill`, so regenerate it after updating Herdr.
 - Agent integrations make agents report their own state and let Herdr restore sessions after a restart. Install them once per machine:
 
 ```sh

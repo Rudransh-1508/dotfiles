@@ -65,6 +65,14 @@ in
   home.file.".claude/settings.json".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.claude/settings.json";
 
+  # Herdr skill, printed by `herdr --skill` so it matches the installed Herdr.
+  # Codex, Pi, and Kimi read ~/.agents/skills; Claude reads ~/.claude/skills.
+  # Regenerate after a Herdr update: herdr --skill > home/.agents/skills/herdr/SKILL.md
+  home.file.".agents/skills/herdr".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.agents/skills/herdr";
+  home.file.".claude/skills/herdr".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.agents/skills/herdr";
+
   # Keep Pi's credential and runtime state local by linking only authored files and directories.
   home.file.".pi/agent/themes".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.pi/agent/themes";
