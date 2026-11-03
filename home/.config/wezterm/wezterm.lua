@@ -10,6 +10,14 @@ config.macos_window_background_blur = 50
 config.hide_tab_bar_if_only_one_tab = true
 config.window_decorations = "RESIZE"
 
+-- Let these Cmd keys reach Herdr and Neovim (see ../herdr/config.toml). The
+-- kitty keyboard protocol is what carries the Cmd modifier through to them.
+config.enable_kitty_keyboard = true
+config.keys = {}
+for _, key in ipairs({ { "t", "CMD" }, { "w", "CMD" }, { "k", "CMD" }, { "e", "CMD" }, { "g", "CMD|SHIFT" } }) do
+	table.insert(config.keys, { key = key[1], mods = key[2], action = wezterm.action.DisableDefaultAssignment })
+end
+
 -- Dim unfocused windows so the focused one is obvious at a glance.
 local UNFOCUSED_FOREGROUND_TEXT_HSB = { hue = 1.0, saturation = 0.25, brightness = 0.45 }
 local UNFOCUSED_WINDOW_BACKGROUND_OPACITY = 0.62

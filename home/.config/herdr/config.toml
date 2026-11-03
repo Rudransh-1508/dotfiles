@@ -1,28 +1,63 @@
 onboarding = false
 
+# Keys, colors, and sidebar follow the Datalumina Herdr guide:
+# https://learn.datalumina.com/docs/herdr
+
 [theme]
 name = "tokyo-night"
-[keys]
-prefix = "ctrl+b"
-focus_pane_left  = "prefix+h"
-focus_pane_down  = "prefix+j"
-focus_pane_up    = "prefix+k"
-focus_pane_right = "prefix+l"
-split_horizontal = "prefix+double_quote"
-split_vertical    = "prefix+percent"
-new_tab   = "prefix+c"
-close_tab = "prefix+ampersand"
-workspace_picker = "prefix+w"
-goto             = "prefix+g"
-copy_mode  = "prefix+y"  # herdr's copy-mode entry key; copy-mode's own internal keys (v/space select, y/Enter copy, q/Esc cancel) aren't configurable
+
+[theme.custom]
+red = "#4e82ef"     # blocked, needs input
+teal = "#4e82ef"    # done, not seen yet
+yellow = "#a78bfa"  # working
+active_row_bg = "#45475a"
 
 [ui]
-# Agents panel order: explicit choice of "spaces" (grouped by space, the default) over "priority".
-agent_panel_sort = "spaces"
+# Blocked agents first, then done, then working.
+agent_panel_sort = "priority"
+status_indicators = "dots"
+# Keep a mouse selection on screen until it is copied.
+copy_on_select = false
+# No name prompt on new tabs: the auto-title plugin names them, and a typed
+# name would stop it from ever renaming that tab.
+prompt_new_tab_name = false
+
+[ui.sidebar.agents]
+row_gap = 1
+rows = [
+  ["state_icon", "workspace"],
+  ["tab"],
+]
+
+[ui.sidebar.spaces]
+row_gap = 1
+rows = [
+  ["state_icon", "workspace"],
+  ["branch"],
+]
+
+[ui.sound]
+enabled = false
+
+# Direct Cmd and arrow shortcuts for the common actions; the prefix stays as a
+# fallback. The guide's "§" prefix has no key on a US keyboard, so the prefix
+# keeps Herdr's default ctrl+b. The terminals unbind these Cmd keys so they
+# reach Herdr, and the Ctrl arrows need Mission Control's shortcuts turned off.
+[keys]
+prefix = "ctrl+b"
+new_tab = ["prefix+c", "cmd+t"]
+close_tab = ["prefix+shift+x", "cmd+w"]
+goto = ["prefix+g", "cmd+k"]
+previous_tab = ["prefix+p", "ctrl+left"]
+next_tab = ["prefix+n", "ctrl+right"]
+previous_workspace = "ctrl+up"
+next_workspace = "ctrl+down"
+cycle_pane_next = ["prefix+tab", "alt+up"]
+cycle_pane_previous = ["prefix+shift+tab", "alt+down"]
 
 # Lazygit over the focused pane, in that pane's directory. q closes it.
 [[keys.command]]
-key = "prefix+d"
+key = ["cmd+shift+g", "prefix+d"]
 type = "popup"
 command = "cd \"${HERDR_ACTIVE_PANE_CWD:-.}\" && exec lazygit"
 description = "Git status"

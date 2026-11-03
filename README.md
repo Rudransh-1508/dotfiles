@@ -107,8 +107,19 @@ When you change one, change the other.
 
 [Herdr](https://herdr.dev) runs each agent in its own pane and shows in a sidebar which ones are working, blocked, or done.
 
-- Prefix is `Ctrl+B`, with tmux-style keys (`h`/`j`/`k`/`l` to move, `"` and `%` to split, `c` for a new tab).
-- `Ctrl+B` then `d` opens lazygit as a popup in the focused pane's folder. `q` closes it.
+- Keys follow the [Datalumina guide](https://learn.datalumina.com/docs/herdr/keyboard): Cmd+T new tab, Cmd+W close tab, Cmd+K go to any workspace, tab, or agent, Ctrl+Left/Right for tabs, Ctrl+Up/Down for workspaces, Alt+Up/Down to cycle panes.
+- Cmd+Shift+G (or `Ctrl+B` then `d`) opens lazygit as a popup in the focused pane's folder. `q` closes it.
+- `Ctrl+B` stays as the prefix fallback; `Ctrl+B` then `?` lists every binding.
+- WezTerm and Ghostty both unbind those Cmd keys so they reach Herdr.
+- macOS takes the Ctrl arrows for Mission Control. Turn those four shortcuts off in System Settings, Keyboard, Keyboard Shortcuts, Mission Control.
+- The sidebar shows a colored dot per agent and two lines per entry. Blue means blocked or done (look at me), violet means working.
+- The [auto-title plugin](https://github.com/kryptamine/herdr-auto-title) names each tab after its folder, branch, or the agent's current task, so the sidebar reads like a task list. Install it once per machine, pinned to a release (it needs Go, which `configuration.nix` installs):
+
+```sh
+herdr plugin install kryptamine/herdr-auto-title --ref v0.19.0
+herdr plugin action invoke herdr.auto-title.restart
+```
+
 - Agent integrations make agents report their own state and let Herdr restore sessions after a restart. Install them once per machine:
 
 ```sh

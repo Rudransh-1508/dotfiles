@@ -86,6 +86,7 @@
       "gmp"
       "gnupg"
       "gnutls"
+      "go"
       "gpgme"
       "gpgmepp"
       "graphite2"
