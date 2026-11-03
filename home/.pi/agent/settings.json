@@ -1,0 +1,21 @@
+{
+  "images": {
+    "blockImages": false
+  },
+  "terminal": {
+    "showImages": false
+  },
+  "hideThinkingBlock": true,
+  "quietStartup": true,
+  "theme": "tokyo-night",
+  "steeringMode": "all",
+  "followUpMode": "all",
+  "collapseChangelog": true,
+  "packages": [
+    "npm:pi-web-access@0.14.0",
+    "npm:@ryan_nookpi/pi-extension-codex-fast-mode@0.2.6"
+  ],
+  "lastChangelogVersion": "1.3.0",
+  "defaultProvider": "anthropic",
+  "defaultModel": "claude-opus-4-8"
+}

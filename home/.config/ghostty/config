@@ -1,0 +1,24 @@
+# Mirrors ../wezterm/wezterm.lua. Keep the two in sync.
+
+theme = TokyoNight Night
+font-family = Hack Nerd Font
+font-size = 15
+background-opacity = 0.8
+background-blur = 50
+
+# WezTerm's RESIZE decorations: no titlebar, but a normal resizable frame.
+# Ghostty draws its tab bar in the titlebar, so this also hides tabs the way
+# hide_tab_bar_if_only_one_tab did; Herdr owns tabs anyway.
+macos-titlebar-style = hidden
+
+# WezTerm defaults Ghostty does not share.
+# Left Option sends Alt, right Option still types special characters.
+macos-option-as-alt = left
+cursor-style = block
+cursor-style-blink = false
+# One cell left and right, half a cell top and bottom, in points at 15pt Hack.
+window-padding-x = 9
+window-padding-y = 9
+
+# Ghostty has no unfocused-window dimming, so WezTerm's window-focus-changed
+# handler has no equivalent. Splits inside a window still fade when unfocused.
