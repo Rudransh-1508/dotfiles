@@ -52,7 +52,7 @@ next_workspace = "ctrl+down"
 cycle_pane_next = ["prefix+tab", "alt+up"]
 cycle_pane_previous = ["prefix+shift+tab", "alt+down"]
 # New pane next to or below the focused one, like Ghostty's and iTerm's splits.
-split_vertical = ["prefix+v", "cmd+d"]
+split_vertical = ["prefix+plus", "cmd+d"]
 split_horizontal = ["prefix+minus", "cmd+shift+d"]
 
 # Lazygit over the focused pane, in that pane's directory. q closes it.
