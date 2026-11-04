@@ -3,8 +3,6 @@
 theme = TokyoNight Night
 font-family = Hack Nerd Font
 font-size = 15
-background-opacity = 0.8
-background-blur = 50
 
 # WezTerm's RESIZE decorations: no titlebar, but a normal resizable frame.
 # Ghostty draws its tab bar in the titlebar, so this also hides tabs the way
