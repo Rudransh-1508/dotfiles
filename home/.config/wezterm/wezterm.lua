@@ -15,7 +15,8 @@ config.colors = {
 	ansi = { "#282A2B", "#F3977F", "#5ADECD", "#F272A2", "#886F97", "#C574DD", "#79E6F3", "#FDFDFD" },
 	brights = { "#415844", "#FF4971", "#18E3C8", "#FF8037", "#556FFF", "#B0D143", "#3FDCEE", "#BEBEC1" },
 }
-config.font = wezterm.font("Hack Nerd Font")
+-- No config.font: WezTerm's built-in JetBrains Mono with Nerd Font icons,
+-- the same font Ghostty uses by default.
 config.font_size = 14.0
 -- Cursor and padding match ../ghostty/config, in the same points.
 config.default_cursor_style = "SteadyBar"

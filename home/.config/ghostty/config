@@ -21,7 +21,8 @@ palette = 13=#B0D143
 palette = 14=#3FDCEE
 palette = 15=#BEBEC1
 
-font-family = Hack Nerd Font
+# No font-family: Ghostty's built-in JetBrains Mono with Nerd Font icons, as
+# in the guide.
 font-size = 14
 
 # WezTerm's RESIZE decorations: no titlebar, but a normal resizable frame.

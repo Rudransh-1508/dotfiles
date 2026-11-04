@@ -16,10 +16,7 @@ in
     jq        # json on the command line
     lazygit
     neovim
-    # the font everything renders in
-    nerd-fonts.hack
   ];
-  fonts.fontconfig.enable = true;
   home.sessionVariables.EDITOR = "nvim";
 
   programs.zsh = {

@@ -12,7 +12,7 @@ The Herdr, Ghostty, and Neovim pieces take ideas from the [Datalumina Herdr guid
 
 - System settings: dark mode, key repeat, Dock, Finder, trackpad
 - Homebrew apps and CLI tools, declared in `configuration.nix`
-- Nix user packages: ripgrep, fd, fzf, jq, lazygit, Neovim, Hack Nerd Font
+- Nix user packages: ripgrep, fd, fzf, jq, lazygit, Neovim
 - Shell: zsh with autosuggestions, syntax highlighting, aliases, and a starship prompt
 - Terminals: WezTerm and Ghostty, kept at the same look and behavior
 - Editor: Neovim on [LazyVim](https://www.lazyvim.org), set up as a VS Code-style file viewer
@@ -99,7 +99,7 @@ Read those lists before your first switch and add anything you want to keep.
 
 ## Terminals
 
-WezTerm and Ghostty share the same theme, Hack Nerd Font at 14pt, a steady bar cursor, the guide's padding, a solid background, and no titlebar.
+WezTerm and Ghostty share the same theme, the built-in JetBrains Mono at 14pt, a steady bar cursor, the guide's padding, a solid background, and no titlebar.
 Both Option keys work as Alt, and each keeps 100,000 lines of scrollback.
 The one difference: only WezTerm dims unfocused windows, because Ghostty has no option for it.
 When you change one, change the other.
