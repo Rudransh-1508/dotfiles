@@ -1,4 +1,4 @@
-{ config, pkgs, user, ... }:
+{ config, lib, pkgs, user, ... }:
 
 let
   dotfiles = "${config.home.homeDirectory}/.dotfiles";
@@ -14,10 +14,15 @@ in
     fd        # fast find
     fzf       # fuzzy finder
     jq        # json on the command line
-    lazygit
     neovim
   ];
-  home.sessionVariables.EDITOR = "nvim";
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    # Shell tools from the Datalumina guide: https://learn.datalumina.com/docs/herdr/folders
+    BAT_THEME = "TwoDark";
+    FZF_DEFAULT_COMMAND = "fd --type f --hidden --follow --exclude .git";
+    FZF_DEFAULT_OPTS = "--height 40% --layout=reverse --border --cycle";
+  };
 
   programs.zsh = {
     enable = true;
@@ -25,6 +30,12 @@ in
     syntaxHighlighting.enable = true;  # commands turn green when valid
     initContent = ''
       bindkey '^f' autosuggest-accept
+
+      # fzf keys: Ctrl+R history, Ctrl+T file, Alt+C folder. zoxide: z and zi.
+      if [[ -t 0 && -t 1 ]] && command -v fzf >/dev/null; then
+        source <(fzf --zsh)
+      fi
+      command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
     '';
     shellAliases = {
       ".." = "cd ..";
@@ -34,6 +45,10 @@ in
       m = "git switch main";
       cc = "claude --dangerously-skip-permissions";
       co = "codex --full-auto";
+      ls = "eza";
+      ll = "eza -la";
+      tree = "eza --tree";
+      cat = "bat";
     };
   };
 
@@ -59,6 +74,8 @@ in
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/nvim";
   home.file.".config/herdr".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/herdr";
+  home.file."Library/Application Support/lazygit/config.yml".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/lazygit/config.yml";
   home.file.".claude/settings.json".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.claude/settings.json";
 
@@ -86,4 +103,15 @@ in
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/AGENTS.md";
   home.file.".config/opencode/AGENTS.md".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/AGENTS.md";
+
+  # Give Ctrl+arrows to Herdr: turn off the Mission Control, Application
+  # windows, and Move left/right a space shortcuts. -dict-add keeps every other
+  # shortcut as it is.
+  home.activation.freeCtrlArrows = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    for id in 32 33 79 80 81 82; do
+      run /usr/bin/defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys \
+        -dict-add "$id" "<dict><key>enabled</key><false/></dict>"
+    done
+    run /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+  '';
 }

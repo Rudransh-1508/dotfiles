@@ -13,7 +13,8 @@ The Herdr, Ghostty, and Neovim pieces take ideas from the [Datalumina Herdr guid
 - System settings: dark mode, key repeat, Dock, Finder, trackpad
 - Homebrew apps and CLI tools, declared in `configuration.nix`
 - Nix user packages: ripgrep, fd, fzf, jq, lazygit, Neovim
-- Shell: zsh with autosuggestions, syntax highlighting, aliases, and a starship prompt
+- Shell: zsh with autosuggestions, syntax highlighting, aliases, a starship prompt, and the guide's [folder tools](https://learn.datalumina.com/docs/herdr/folders): zoxide (`z`, `zi`), fzf keys (Ctrl+R, Ctrl+T, Alt+C), and `eza` and `bat` in place of `ls` and `cat`
+- lazygit: the [guide's config](https://learn.datalumina.com/docs/herdr/lazygit), with `delta` diffs, branch colors per agent, and Esc to quit
 - Terminals: WezTerm and Ghostty, kept at the same look and behavior
 - Editor: Neovim on [LazyVim](https://www.lazyvim.org), set up as a VS Code-style file viewer
 - Herdr: agent multiplexer with a lazygit popup and agent state integrations
@@ -112,7 +113,7 @@ When you change one, change the other.
 - Cmd+Shift+G (or `Ctrl+B` then `d`) opens lazygit as a popup in the focused pane's folder. `q` closes it.
 - `Ctrl+B` stays as the prefix fallback; `Ctrl+B` then `?` lists every binding.
 - WezTerm and Ghostty both unbind those Cmd keys so they reach Herdr.
-- macOS takes the Ctrl arrows for Mission Control. Turn those four shortcuts off in System Settings, Keyboard, Keyboard Shortcuts, Mission Control.
+- macOS takes the Ctrl arrows for Mission Control. `home.nix` turns those shortcuts off on every rebuild; log out and back in if they still switch Spaces.
 - The sidebar shows a colored dot per agent and two lines per entry. Blue means blocked or done (look at me), violet means working.
 - The [auto-title plugin](https://github.com/kryptamine/herdr-auto-title) names each tab after its folder, branch, or the agent's current task, so the sidebar reads like a task list. Install it once per machine, pinned to a release (it needs Go, which `configuration.nix` installs):
 
