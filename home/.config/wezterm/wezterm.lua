@@ -16,7 +16,10 @@ config.colors = {
 	brights = { "#415844", "#FF4971", "#18E3C8", "#FF8037", "#556FFF", "#B0D143", "#3FDCEE", "#BEBEC1" },
 }
 config.font = wezterm.font("Hack Nerd Font")
-config.font_size = 15.0
+config.font_size = 14.0
+-- Cursor and padding match ../ghostty/config, in the same points.
+config.default_cursor_style = "SteadyBar"
+config.window_padding = { left = "10pt", right = "10pt", top = "8pt", bottom = "8pt" }
 config.hide_tab_bar_if_only_one_tab = true
 config.window_decorations = "RESIZE"
 

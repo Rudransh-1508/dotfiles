@@ -99,8 +99,8 @@ Read those lists before your first switch and add anything you want to keep.
 
 ## Terminals
 
-WezTerm and Ghostty share the same theme, Hack Nerd Font at 15pt, a solid background, and no titlebar.
-Ghostty also copies WezTerm's defaults for Option-as-Alt, a non-blinking block cursor, and window padding.
+WezTerm and Ghostty share the same theme, Hack Nerd Font at 14pt, a steady bar cursor, the guide's padding, a solid background, and no titlebar.
+Left Option works as Alt in both.
 The one difference: only WezTerm dims unfocused windows, because Ghostty has no option for it.
 When you change one, change the other.
 

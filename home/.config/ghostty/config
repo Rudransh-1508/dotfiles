@@ -22,7 +22,7 @@ palette = 14=#3FDCEE
 palette = 15=#BEBEC1
 
 font-family = Hack Nerd Font
-font-size = 15
+font-size = 14
 
 # WezTerm's RESIZE decorations: no titlebar, but a normal resizable frame.
 # Ghostty draws its tab bar in the titlebar, so this also hides tabs the way
@@ -36,14 +36,14 @@ keybind = super+k=unbind
 keybind = super+e=unbind
 keybind = super+shift+g=unbind
 
-# WezTerm defaults Ghostty does not share.
 # Left Option sends Alt, right Option still types special characters.
 macos-option-as-alt = left
-cursor-style = block
+
+# Cursor and padding from the Datalumina guide (Dave's setup).
+cursor-style = bar
 cursor-style-blink = false
-# One cell left and right, half a cell top and bottom, in points at 15pt Hack.
-window-padding-x = 9
-window-padding-y = 9
+window-padding-x = 10
+window-padding-y = 8
 
 # Ghostty has no unfocused-window dimming, so WezTerm's window-focus-changed
 # handler has no equivalent. Splits inside a window still fade when unfocused.
