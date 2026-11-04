@@ -3,9 +3,6 @@ onboarding = false
 # Keys, colors, and sidebar follow the Datalumina Herdr guide:
 # https://learn.datalumina.com/docs/herdr
 
-[theme]
-name = "tokyo-night"
-
 [theme.custom]
 red = "#4e82ef"     # blocked, needs input
 teal = "#4e82ef"    # done, not seen yet

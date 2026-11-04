@@ -19,7 +19,7 @@ The Herdr, Ghostty, and Neovim pieces take ideas from the [Datalumina Herdr guid
 - Herdr: agent multiplexer with a lazygit popup and agent state integrations
 - Agent configs: Claude, Codex, and opencode share one `home/AGENTS.md`; Pi gets its own theme, extensions, and settings
 
-Everything uses the TokyoNight Night theme: WezTerm, Ghostty, Neovim, Herdr, and Pi.
+Everything uses Dave's colors from the [Datalumina guide](https://learn.datalumina.com/docs/herdr/ghostty): a `#1D1E27` background with a bright custom palette in WezTerm, Ghostty, and Pi, Atom One Dark on that background in Neovim, and the guide's status colors in Herdr.
 
 ## Prerequisites
 
@@ -146,7 +146,7 @@ npm install -g --ignore-scripts @earendil-works/pi-coding-agent
 
 Home Manager links `~/.pi/agent/themes`, `~/.pi/agent/extensions`, `models.json`, and `settings.json` from this repo, and leaves Pi's credentials, sessions, and caches alone.
 
-- `themes/tokyo-night.json` is the active theme, written from the public [Tokyo Night palette](https://github.com/folke/tokyonight.nvim) and Pi's [theme schema](https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/src/modes/interactive/theme/theme-schema.json). `rose-pine-moon.json` is kept as an alternative.
+- `themes/dave.json` is the active theme, built from the terminal palette and Pi's [theme schema](https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/src/modes/interactive/theme/theme-schema.json). `tokyo-night.json` and `rose-pine-moon.json` are kept as alternatives.
 - `extensions/calm` adds `/calm`, a quieter presentation mode that hides tool call shells and collapsed thinking. It's MIT licensed; see its `LICENSE`.
 - `extensions/terminal-status-title.js` shows a spinner in the terminal title while Pi works.
 - `settings.json` pins two third-party packages, `pi-web-access@0.14.0` and `@ryan_nookpi/pi-extension-codex-fast-mode@0.2.6`. They run with your full user permissions, so trust them like any other code.

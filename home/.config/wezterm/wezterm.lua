@@ -2,7 +2,19 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
-config.color_scheme = "Tokyo Night"
+-- Same colors as ../ghostty/config. The cursor and selection match Ghostty's
+-- defaults when it has no theme: foreground-colored, with inverted text.
+config.colors = {
+	background = "#1D1E27",
+	foreground = "#FDFDFD",
+	cursor_bg = "#FDFDFD",
+	cursor_fg = "#1D1E27",
+	cursor_border = "#FDFDFD",
+	selection_bg = "#FDFDFD",
+	selection_fg = "#1D1E27",
+	ansi = { "#282A2B", "#F3977F", "#5ADECD", "#F272A2", "#886F97", "#C574DD", "#79E6F3", "#FDFDFD" },
+	brights = { "#415844", "#FF4971", "#18E3C8", "#FF8037", "#556FFF", "#B0D143", "#3FDCEE", "#BEBEC1" },
+}
 config.font = wezterm.font("Hack Nerd Font")
 config.font_size = 15.0
 config.hide_tab_bar_if_only_one_tab = true

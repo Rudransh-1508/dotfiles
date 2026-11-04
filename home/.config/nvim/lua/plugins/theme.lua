@@ -1,25 +1,46 @@
--- TokyoNight Night, matching the WezTerm and Ghostty theme. The background is
--- transparent so the terminal's opacity and blur show through the editor.
+-- Atom One Dark syntax on the terminal's #1D1E27 background, so the editor
+-- sits flush in Ghostty and WezTerm. From the Datalumina Herdr guide:
+-- https://learn.datalumina.com/docs/herdr/neovim
 return {
   {
-    "folke/tokyonight.nvim",
+    "navarasu/onedark.nvim",
     lazy = false,
     priority = 1000,
     opts = {
-      style = "night",
-      transparent = true,
-      styles = {
-        comments = { italic = false },
-        keywords = { italic = false },
-        sidebars = "transparent",
-        floats = "transparent",
+      style = "dark",
+      term_colors = false,
+      ending_tildes = false,
+      colors = {
+        bg0 = "#1D1E27",
+        bg_d = "#18191F",
+        bg1 = "#282c34",
+        bg2 = "#31353f",
+        bg3 = "#393f4a",
+      },
+      highlights = {
+        Normal = { fg = "$fg", bg = "$bg0" },
+        NormalNC = { fg = "$fg", bg = "$bg0" },
+        NormalFloat = { fg = "$fg", bg = "$bg1" },
+        FloatBorder = { fg = "$grey", bg = "$bg1" },
+        SignColumn = { bg = "$bg0" },
+        EndOfBuffer = { fg = "$bg0", bg = "$bg0" },
+        WinSeparator = { fg = "$bg1", bg = "$bg0" },
+        NeoTreeNormal = { fg = "$fg", bg = "$bg0" },
+        NeoTreeNormalNC = { fg = "$fg", bg = "$bg0" },
+        NeoTreeEndOfBuffer = { fg = "$bg0", bg = "$bg0" },
+        NeoTreeWinSeparator = { fg = "$bg0", bg = "$bg0" },
+        NeoTreeVertSplit = { fg = "$bg0", bg = "$bg0" },
       },
     },
+    config = function(_, opts)
+      require("onedark").setup(opts)
+      require("onedark").load()
+    end,
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight-night",
+      colorscheme = "onedark",
     },
   },
 }
