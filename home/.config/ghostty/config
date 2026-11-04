@@ -36,6 +36,8 @@ keybind = super+w=unbind
 keybind = super+k=unbind
 keybind = super+e=unbind
 keybind = super+shift+g=unbind
+keybind = super+d=unbind
+keybind = super+shift+d=unbind
 
 # Both Option keys send Alt, as in the Datalumina guide.
 macos-option-as-alt = true

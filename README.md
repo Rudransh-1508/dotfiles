@@ -109,7 +109,7 @@ When you change one, change the other.
 
 [Herdr](https://herdr.dev) runs each agent in its own pane and shows in a sidebar which ones are working, blocked, or done.
 
-- Keys follow the [Datalumina guide](https://learn.datalumina.com/docs/herdr/keyboard): Cmd+T new tab, Cmd+W close tab, Cmd+K go to any workspace, tab, or agent, Ctrl+Left/Right for tabs, Ctrl+Up/Down for workspaces, Alt+Up/Down to cycle panes.
+- Keys follow the [Datalumina guide](https://learn.datalumina.com/docs/herdr/keyboard): Cmd+T new tab, Cmd+W close tab, Cmd+K go to any workspace, tab, or agent, Ctrl+Left/Right for tabs, Ctrl+Up/Down for workspaces, Alt+Up/Down to cycle panes. Cmd+D splits a new pane to the right and Cmd+Shift+D below; these two are not in the guide.
 - Cmd+Shift+G (or `Ctrl+B` then `d`) opens lazygit as a popup in the focused pane's folder. `q` closes it.
 - `Ctrl+B` stays as the prefix fallback; `Ctrl+B` then `?` lists every binding.
 - WezTerm and Ghostty both unbind those Cmd keys so they reach Herdr.

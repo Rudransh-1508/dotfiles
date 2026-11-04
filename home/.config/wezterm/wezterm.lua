@@ -32,7 +32,7 @@ config.window_decorations = "RESIZE"
 -- kitty keyboard protocol is what carries the Cmd modifier through to them.
 config.enable_kitty_keyboard = true
 config.keys = {}
-for _, key in ipairs({ { "t", "CMD" }, { "w", "CMD" }, { "k", "CMD" }, { "e", "CMD" }, { "g", "CMD|SHIFT" } }) do
+for _, key in ipairs({ { "t", "CMD" }, { "w", "CMD" }, { "k", "CMD" }, { "e", "CMD" }, { "g", "CMD|SHIFT" }, { "d", "CMD" }, { "d", "CMD|SHIFT" } }) do
 	table.insert(config.keys, { key = key[1], mods = key[2], action = wezterm.action.DisableDefaultAssignment })
 end
 
