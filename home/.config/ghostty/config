@@ -36,8 +36,12 @@ keybind = super+k=unbind
 keybind = super+e=unbind
 keybind = super+shift+g=unbind
 
-# Left Option sends Alt, right Option still types special characters.
-macos-option-as-alt = left
+# Both Option keys send Alt, as in the Datalumina guide.
+macos-option-as-alt = true
+
+# 100,000 lines of history. The guide writes `scrollback-limit = 100000`, but
+# Ghostty reads that as 100 KB, far below its 50 MB default, so set lines.
+scrollback-limit-lines = 100000
 
 # Cursor and padding from the Datalumina guide (Dave's setup).
 cursor-style = bar

@@ -21,6 +21,10 @@ config.font_size = 14.0
 config.default_cursor_style = "SteadyBar"
 config.window_padding = { left = "10pt", right = "10pt", top = "8pt", bottom = "8pt" }
 config.hide_tab_bar_if_only_one_tab = true
+-- Both Option keys send Alt, and 100,000 lines of history, like ../ghostty/config.
+config.send_composed_key_when_left_alt_is_pressed = false
+config.send_composed_key_when_right_alt_is_pressed = false
+config.scrollback_lines = 100000
 config.window_decorations = "RESIZE"
 
 -- Let these Cmd keys reach Herdr and Neovim (see ../herdr/config.toml). The
