@@ -98,6 +98,98 @@ Read those lists before your first switch and add anything you want to keep.
   - `AGENTS.md` - shared agent instructions
   - `.agents/skills/herdr/` - the Herdr skill for every agent
 
+## Shortcuts
+
+Most follow the [Datalumina Herdr guide](https://learn.datalumina.com/docs/herdr/keyboard).
+The guide's Herdr prefix is `§`, which a US keyboard doesn't have, so the prefix here is Ctrl+B: press it, let go, then press the next key.
+
+### Herdr
+
+| Key | Action |
+|---|---|
+| Cmd+T | New tab |
+| Cmd+W | Close tab |
+| Cmd+K | Go to any workspace, tab, or agent |
+| Cmd+D | New pane to the right (not in the guide) |
+| Cmd+Shift+D | New pane below (not in the guide) |
+| Cmd+Shift+G | lazygit popup in the focused pane's folder; `q` closes it |
+| Ctrl+Left / Ctrl+Right | Previous / next tab |
+| Ctrl+Up / Ctrl+Down | Previous / next workspace |
+| Alt+Up / Alt+Down | Next / previous pane |
+
+| Ctrl+B, then | Action |
+|---|---|
+| `c` | New tab |
+| `Shift+X` | Close tab |
+| `g` | Go to any workspace, tab, or agent |
+| `p` / `n` | Previous / next tab |
+| `1` to `9` | Go to tab by number |
+| `Tab` / `Shift+Tab` | Next / previous pane |
+| `+` | New pane to the right |
+| `-` | New pane below |
+| `h` `j` `k` `l` | Focus the pane left / down / up / right |
+| `z` | Zoom the focused pane (again to undo) |
+| `x` | Close pane |
+| `r` | Resize mode |
+| `b` | Show or hide the sidebar |
+| `d` | lazygit popup |
+| `Shift+N` | New workspace |
+| `Shift+W` / `Shift+T` / `Shift+P` | Rename workspace / tab / pane |
+| `Shift+D` | Close workspace |
+| `e` | Open the pane's scrollback in an editor |
+| `s` | Settings |
+| `Shift+R` | Reload config |
+| `q` | Detach; everything keeps running |
+| `?` | List every binding |
+
+### Neovim
+
+Space is the leader key.
+
+| Key | Action |
+|---|---|
+| Click a file, or `j` / `k` over it | Preview it |
+| Double-click, or Enter | Keep the file open |
+| Ctrl+P | Find files |
+| Ctrl+Shift+F, or `/` | Search the project |
+| `g` then `/` | Search in the file |
+| Cmd-click or Ctrl-click | Go to definition |
+| Ctrl-right-click | Go back |
+| Cmd+E | Focus the file tree |
+| Space `g` `c` | Switch git branch |
+| `:q` | Quit |
+
+### lazygit
+
+| Key | Action |
+|---|---|
+| `q`, or Esc at the top level | Quit, which closes the Herdr popup |
+| `b` | Check out a branch by name |
+| `\|` | Switch the diff view between delta and word-level |
+| `]` / `[` | Next / previous tab inside a panel |
+| `?` | List every key |
+
+### Shell
+
+| Key or command | Action |
+|---|---|
+| `z name` | Jump to a visited folder matching `name` |
+| `zi` | Pick a visited folder from a list |
+| Ctrl+R | Search command history |
+| Ctrl+T | Insert a file path |
+| Alt+C | Jump into a folder |
+| Ctrl+F | Accept the gray suggestion |
+| `ls`, `ll`, `tree` | `eza`; `ls -lt` needs `ls -l --sort=modified` instead |
+| `cat` | `bat` with syntax colors |
+| `add`, `push`, `pull`, `m` | `git add .`, `git push`, `git pull`, `git switch main` |
+| `cc`, `co` | Claude and Codex in full-auto mode |
+
+### Terminals
+
+| Key | Action |
+|---|---|
+| Cmd+Shift+, | Reload Ghostty's config (WezTerm reloads on its own) |
+
 ## Terminals
 
 WezTerm and Ghostty share the same theme, the built-in JetBrains Mono at 14pt, a steady bar cursor, the guide's padding, a solid background, and no titlebar.
@@ -109,10 +201,8 @@ When you change one, change the other.
 
 [Herdr](https://herdr.dev) runs each agent in its own pane and shows in a sidebar which ones are working, blocked, or done.
 
-- Keys follow the [Datalumina guide](https://learn.datalumina.com/docs/herdr/keyboard): Cmd+T new tab, Cmd+W close tab, Cmd+K go to any workspace, tab, or agent, Ctrl+Left/Right for tabs, Ctrl+Up/Down for workspaces, Alt+Up/Down to cycle panes. Cmd+D (or `Ctrl+B` then `+`) splits a new pane to the right and Cmd+Shift+D (or `Ctrl+B` then `-`) below; these are not in the guide.
-- Cmd+Shift+G (or `Ctrl+B` then `d`) opens lazygit as a popup in the focused pane's folder. `q` closes it.
-- `Ctrl+B` stays as the prefix fallback; `Ctrl+B` then `?` lists every binding.
-- WezTerm and Ghostty both unbind those Cmd keys so they reach Herdr.
+- Keys follow the [Datalumina guide](https://learn.datalumina.com/docs/herdr/keyboard), with Ctrl+B as the prefix. See [Shortcuts](#shortcuts) for every binding.
+- WezTerm and Ghostty both unbind the Cmd keys Herdr uses so they reach it.
 - macOS takes the Ctrl arrows for Mission Control. `home.nix` turns those shortcuts off on every rebuild; log out and back in if they still switch Spaces.
 - The sidebar shows a colored dot per agent and two lines per entry. Blue means blocked or done (look at me), violet means working.
 - The [auto-title plugin](https://github.com/kryptamine/herdr-auto-title) names each tab after its folder, branch, or the agent's current task, so the sidebar reads like a task list. Install it once per machine, pinned to a release (it needs Go, which `configuration.nix` installs):
